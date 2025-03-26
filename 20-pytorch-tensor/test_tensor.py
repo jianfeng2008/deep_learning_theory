@@ -17,6 +17,8 @@ def reshape_transpose():
     data0 = torch.randn(4,5) # stride = (5, 1) --> (2, 4, 3) --> (12, 3, 1)
 
     data1 =data0.T # 数据不会真正搬迁，但是stride 会变化。stride 对应做转置 ： （1，5）
+    #transpose & permert 会造成数据不连续，理论上数据要转置，发生重排，实际只是改了metedata
+    
     
     data2 = data1.contiguous() # 
 
