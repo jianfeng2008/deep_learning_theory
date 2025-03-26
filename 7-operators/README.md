@@ -52,7 +52,7 @@ output.size()
 ```python
 import torch
 import torch.nn as nn
-m = nn.Linear(20, 30) # A[m,k]*W[k,n] = O[m,n] --> 20 = k, 30 = n
+m = nn.Linear(20, 30) # A[m,k]*W[k,n] = O[m,n] --> 20 = k, 30 = n    weight是做过转置的
 input = torch.randn(128, 20)
 output = m(input)
 print(output.size())
